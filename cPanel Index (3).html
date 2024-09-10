@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Design Tool by Jay Khemchandani</title>
+    <link rel="stylesheet" href="app.css?v=1.0.2" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <h1>Shanna Collective AI Design Tool</h1>
+        <button id="logoutBtn">Logout</button>
+      </div>
+
+      <div class="container">
+        <div class="left-panel">
+          <div class="section prompt-builder">
+            <h2>Prompt Builder</h2>
+            <div class="form-group">
+              <label for="objectType">Object Type:</label>
+              <select id="objectType">
+                <option value="Light Fixture">Light Fixture</option>
+                <option value="Lamp">Lamp</option>
+                <option value="Chandelier">Chandelier</option>
+                <option value="Chair">Chair</option>
+                <option value="Table">Table</option>
+                <option value="Sofa">Sofa</option>
+                <option value="Shelf">Shelf</option>
+                <option value="Art Sculpture">Art Sculpture</option>
+                <option value="Ceiling Design">Ceiling Design</option>
+                <option value="Other">Other</option>
+              </select>
+              <input type="text" id="customObjectType" style="display: none;" placeholder="Enter custom object type">
+            </div>
+            <div class="form-group">
+              <label for="designStyle">Design Style:</label>
+              <select id="designStyle">
+                <option value="Modern">Modern</option>
+                <option value="Minimalist">Minimalist</option>
+                <option value="Art Deco">Art Deco</option>
+                <option value="Industrial">Industrial</option>
+                <option value="Scandinavian">Scandinavian</option>
+                <option value="Mid-Century Modern">Mid-Century Modern</option>
+                <option value="Gothic">Gothic</option>
+                <option value="Baroque">Baroque</option>
+                <option value="Neoclassical">Neoclassical</option>
+                <option value="Art Nouveau">Art Nouveau</option>
+                <option value="Rococo">Rococo</option>
+                <option value="Beaux-Arts">Beaux-Arts</option>
+                <option value="Brutalism">Brutalism</option>
+                <option value="Deconstructivism">Deconstructivism</option>
+                <option value="Postmodernism">Postmodernism</option>
+                <option value="Expressionism">Expressionism</option>
+                <option value="Italian Renaissance">Italian Renaissance</option>
+                <option value="French Gothic">French Gothic</option>
+                <option value="Other">Other</option>
+              </select>
+              <input type="text" id="customDesignStyle" style="display: none;" placeholder="Enter custom design style">
+            </div>
+            <div class="form-group">
+              <label for="material">Primary Material:</label>
+              <select id="material">
+                <option value="Wood">Wood</option>
+                <option value="Metal">Metal</option>
+                <option value="Glass">Glass</option>
+                <option value="Plastic">Plastic</option>
+                <option value="Fabric">Fabric</option>
+                <option value="Stone">Stone</option>
+                <option value="Ceramic">Ceramic</option>
+                <option value="Bamboo">Bamboo</option>
+                <option value="Resin">Resin</option>
+                <option value="Rattan">Rattan</option>
+                <option value="Concrete">Concrete</option>
+                <option value="Leucite">Leucite</option>
+                <option value="Acrylic">Acrylic</option>
+                <option value="Feathers">Feathers</option>
+                <option value="Other">Other</option>
+              </select>
+              <input type="text" id="customMaterial" style="display: none;" placeholder="Enter custom material">
+            </div>
+            <div class="form-group">
+              <label for="additionalDetails">Additional Details:</label>
+              <input type="text" id="additionalDetails" />
+            </div>
+            <div class="form-group">
+              <label for="modifications">Modifications:</label>
+              <input type="text" id="modifications" />
+            </div>
+            <button id="buildPromptBtn">Build Prompt</button>
+          </div>
+
+          <div class="section generated-prompt">
+            <h3>Generated Prompt:</h3>
+            <textarea id="finalPrompt" rows="5"></textarea>
+          </div>
+
+          <div class="section image-options">
+            <h2>Image Generation Options</h2>
+            <div class="form-group">
+              <label for="quality">Quality:</label>
+              <select id="quality">
+                <option value="hd">HD</option>
+                <option value="standard">Standard</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="orientation">Orientation:</label>
+              <select id="orientation">
+                <option value="landscape">Landscape</option>
+                <option value="square">Square</option>
+                <option value="portrait">Portrait</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="style">Image Style:</label>
+              <select id="style">
+                <option value="natural">Natural</option>
+                <option value="vivid">Vivid</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="generateBtn">Generate Image</button>
+
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="right-panel">
+          <div id="imageDisplay" class="section">
+            <img
+              id="generatedImage"
+              alt="Generated Image"
+              style="display: none"
+            />
+          </div>
+
+          <button id="saveBtn" disabled>Save Image</button>
+
+          <div class="section image-history">
+            <h2>Image History</h2>
+            <ul id="historyList"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js?v=1.1.2"></script>
+  </body>
+</html>
